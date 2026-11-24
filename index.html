@@ -1030,7 +1030,7 @@
         badgeClass: 'bg-gold-50 text-navy-900 border border-gold-300',
         titleEn: 'Annual Maintenance Contracts (AMC)',
         titleAr: 'عقود الصيانة السنوية والمنشآت',
-        descEn: 'Scheduled preventive visits and breakdown support combining AC, electrical, and plumbing for villas, compounds & offices.',
+        descEn: 'Scheduled preventive visits and agreed breakdown support for AC, electrical, and plumbing across villas, compounds, shops, and offices. We define the asset list, visit frequency, response terms, and reporting arrangements in the quotation.',
         descAr: 'زيارات وقائية مجدولة ودعم أعطال يشمل التكييف والكهرباء والسباكة للفلل والمجمعات والمكاتب.',
         image: 'images/amc-facility.jpg',
         icon: 'shield-check',
@@ -1167,7 +1167,9 @@
         const desc = isAr ? s.descAr : s.descEn;
         const bullets = (isAr ? s.bulletsAr : s.bulletsEn).slice(0, 3);
         const scopeLabel = isAr ? 'نطاق العمل' : 'Scope & Checklist';
-        const bookLabel = isAr ? 'اطلب الخدمة' : 'Request Service';
+        const bookLabel = isAr
+          ? (s.category === 'amc' ? 'اطلب عرض سعر لعقد الصيانة' : 'اطلب الخدمة')
+          : (s.category === 'amc' ? 'Request an AMC quotation' : 'Request service');
         const scopeAction = s.detailUrl
           ? `<a href="${s.detailUrl}" class="flex-1 px-3 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 text-center transition-colors">${isAr ? 'تفاصيل الخدمة' : 'View service details'}</a>`
           : `<button type="button" data-open-modal="${s.id}" class="flex-1 px-3 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 cursor-pointer transition-colors">${scopeLabel}</button>`;
