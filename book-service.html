@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A1F3C" />
+  <title>Send a Service Enquiry | Thanasic Company W.L.L.</title>
+  <meta name="description" content="Choose your service and area, add a few details and send your enquiry to Thanasic Company on WhatsApp." />
+  <link rel="canonical" href="https://thanasiccompany.vercel.app/book-service.html" />
+  <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { font-family: Inter, Arial, sans-serif; margin: 0; background: #f6f8fb; color: #0a1f3c; }
+    .field { width: 100%; min-height: 48px; border: 1px solid #cbd5e1; border-radius: 12px; padding: 12px 14px; background: #fff; color: #0a1f3c; font-size: 16px; }
+    .field:focus { outline: 3px solid rgba(212,175,55,.24); border-color: #c59b27; }
+    label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 700; color: #334155; }
+    .primary { min-height: 52px; width: 100%; border-radius: 13px; background: #d4af37; color: #061529; font-weight: 800; padding: 14px 18px; }
+    .primary:focus-visible, a:focus-visible { outline: 3px solid #d4af37; outline-offset: 3px; }
+    @media (min-width: 640px) { .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } }
+  </style>
+</head>
+<body>
+  <header class="bg-[#0A1F3C] text-white">
+    <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-3 font-extrabold tracking-tight">
+        <img src="/images/logo.jpg" width="40" height="40" alt="Thanasic Company logo" class="rounded-lg border border-[#D4AF37]/50" />
+        <span>THANASIC CO.</span>
+      </a>
+      <a href="tel:+97430363999" class="text-sm font-bold whitespace-nowrap">Call 3036 3999</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+    <div class="mb-6">
+      <p class="text-xs font-extrabold uppercase tracking-widest text-[#9a7412]">Service enquiry • Al Khor, Qatar</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">Tell us what you need.</h1>
+      <p class="text-slate-600 mt-3 leading-relaxed">Your selected service and area are carried into your WhatsApp message. Add your contact details and a short description, then send it to our team.</p>
+    </div>
+
+    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-8">
+      <form id="enquiryForm" class="space-y-5">
+        <div class="form-grid space-y-5 sm:space-y-0">
+          <div>
+            <label for="service">Service needed *</label>
+            <select id="service" name="service" class="field" required>
+              <option value="AC Repair &amp; Maintenance">AC Repair &amp; Maintenance</option>
+              <option value="AC Installation / Gas Refilling">AC Installation / Gas Refilling</option>
+              <option value="Electrical Maintenance &amp; Repair">Electrical Maintenance &amp; Repair</option>
+              <option value="Plumbing Repair &amp; Maintenance">Plumbing Repair &amp; Maintenance</option>
+              <option value="AC &amp; Property Deep Cleaning">AC &amp; Property Deep Cleaning</option>
+              <option value="AMC / Commercial Maintenance">AMC / Commercial Maintenance</option>
+            </select>
+          </div>
+          <div>
+            <label for="area">Your area *</label>
+            <select id="area" name="area" class="field" required>
+              <option value="Al Khor">Al Khor</option>
+              <option value="Al Thakhira">Al Thakhira</option>
+              <option value="Ras Laffan">Ras Laffan</option>
+              <option value="Al Daayen &amp; Umm Salal">Al Daayen &amp; Umm Salal</option>
+              <option value="Doha &amp; Lusail">Doha &amp; Lusail</option>
+            </select>
+          </div>
+          <div>
+            <label for="name">Your name *</label>
+            <input id="name" name="name" class="field" type="text" autocomplete="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="phone">Phone / WhatsApp number *</label>
+            <input id="phone" name="phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="+974 ..." required />
+          </div>
+        </div>
+        <div>
+          <label for="details">What do you need help with? (optional)</label>
+          <textarea id="details" name="details" class="field" rows="4" style="min-height:110px;resize:vertical" placeholder="For example: AC is running but not cooling in the bedroom."></textarea>
+        </div>
+        <button type="submit" class="primary">Continue to WhatsApp <span aria-hidden="true">→</span></button>
+        <p class="text-xs leading-relaxed text-slate-500">This sends a service enquiry, not a confirmed appointment. Our team will contact you to confirm availability, timing and the scope of work. Parts and additional work are quoted separately where applicable.</p>
+      </form>
+    </section>
+
+    <div class="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+      <a href="/" class="font-semibold text-[#0A1F3C] underline underline-offset-4">Back to homepage</a>
+      <p class="text-slate-500">Prefer to call? <a href="tel:+97430363999" class="font-bold text-[#0A1F3C]">+974 3036 3999</a></p>
+    </div>
+  </main>
+
+  <script>
+    const serviceOptions = Array.from(document.getElementById('service').options).map(option => option.value);
+    const areaOptions = Array.from(document.getElementById('area').options).map(option => option.value);
+    const params = new URLSearchParams(window.location.search);
+    const requestedService = params.get('service');
+    const requestedArea = params.get('area');
+    if (serviceOptions.includes(requestedService)) document.getElementById('service').value = requestedService;
+    if (areaOptions.includes(requestedArea)) document.getElementById('area').value = requestedArea;
+
+    document.getElementById('enquiryForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!this.reportValidity()) return;
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const area = document.getElementById('area').value;
+      const details = document.getElementById('details').value.trim() || 'Please contact me to discuss the issue and availability.';
+      const message = [
+        'Hello Thanasic Company, I would like to make a service enquiry.',
+        'Name: ' + name,
+        'Phone: ' + phone,
+        'Service: ' + service,
+        'Area: ' + area,
+        'Details: ' + details
+      ].join('\n');
+      window.location.href = 'https://wa.me/97466246353?text=' + encodeURIComponent(message);
+    });
+  </script>
+</body>
+</html>
