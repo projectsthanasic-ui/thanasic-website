@@ -1,0 +1,40 @@
+name: Import Thanasic website archive
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-site.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download and extract website archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            'https://www.dropbox.com/scl/fi/srlpp1ntnlpthy4v360et/thanasic_vercel_site-1.zip?rlkey=37m1d2sv52c67zdyr310kp9mw&dl=1' \
+            --output /tmp/thanasic-site.zip
+          mkdir -p /tmp/thanasic-site
+          unzip -q /tmp/thanasic-site.zip -d /tmp/thanasic-site
+          test -f /tmp/thanasic-site/index.html
+          cp -a /tmp/thanasic-site/. .
+
+      - name: Commit website and remove temporary importer
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/import-site.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Deploy updated Thanasic website [skip ci]'
+          git push origin HEAD:main
