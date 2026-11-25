@@ -39,19 +39,26 @@ module.exports = async function handler(req, res) {
   const suppliedToken = auth.startsWith("Bearer ") ? auth.slice(7) : "";
   if (!safeEqual(suppliedToken, expectedToken)) return send(res, 401, { error: "Unauthorized. Check the dashboard access token." });
 
-  let raw = "";
-  try {
-    for await (const chunk of req) {
-      raw += chunk;
-      if (raw.length > 16000) return send(res, 413, { error: "Request too large" });
+  let payload;
+  if (req.body && typeof req.body === "object") {
+    payload = req.body;
+  } else {
+    let raw = "";
+    try {
+      for await (const chunk of req) {
+        raw += chunk.toString();
+        if (raw.length > 16000) return send(res, 413, { error: "Request too large" });
+      }
+    } catch (_) {
+      return send(res, 400, { error: "Could not read request body" });
     }
-  } catch (_) {
-    return send(res, 400, { error: "Could not read request body" });
+    try { payload = JSON.parse(raw || "{}"); }
+    catch (_) { return send(res, 400, { error: "Invalid JSON body" }); }
   }
 
-  let payload;
-  try { payload = JSON.parse(raw || "{}"); }
-  catch (_) { return send(res, 400, { error: "Invalid JSON body" }); }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return send(res, 400, { error: "Invalid request body" });
+  }
 
   const metrics = payload.metrics || {};
   const safeContext = {
