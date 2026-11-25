@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Thanasic AI SEO Dashboard</title>
+  <style>
+    :root{--navy:#071a32;--navy2:#102b4d;--gold:#d4af37;--bg:#f3f6fb;--ink:#14243a;--muted:#65758b;--line:#e2e8f0;--green:#13865b;--white:#fff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+    .top{background:var(--navy);color:white;padding:22px max(20px,calc((100% - 1180px)/2));border-bottom:3px solid var(--gold)}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-weight:850;letter-spacing:.08em}.brand small{display:block;color:#cbd5e1;font-weight:500;letter-spacing:0;font-size:12px}
+    .pill{display:inline-flex;align-items:center;border:1px solid #d4af3770;border-radius:99px;padding:5px 11px;color:#f7e8b1;font-size:12px}
+    main{max-width:1180px;margin:26px auto;padding:0 18px 60px}.intro{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}.intro h1{font-size:clamp(25px,4vw,36px);margin:0;color:var(--navy)}.intro p{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 3px 14px #0b1d3510}.metric label{display:block;color:var(--muted);font-size:12px;font-weight:650}.metric input{width:100%;border:0;border-bottom:1px solid var(--line);font-size:27px;font-weight:800;color:var(--navy);padding:8px 0;background:transparent;outline:none}.metric small{color:var(--muted);font-size:11px}
+    .section{margin-top:18px}.section h2{margin:0 0 12px;font-size:19px;color:var(--navy)}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .tag{display:inline-block;background:#f4f6fa;color:#34465e;border:1px solid var(--line);padding:6px 9px;border-radius:9px;margin:4px 4px 0 0;font-size:12px}
+    .row{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #edf1f6;padding:10px 0}.row:last-child{border:0}.row small{color:var(--muted)}
+    input[type=text],input[type=number],input[type=password],textarea,select{width:100%;padding:10px 12px;border:1px solid #d8e0ea;border-radius:10px;background:white;color:var(--ink);font:inherit}
+    textarea{min-height:110px;resize:vertical}.btn{border:0;border-radius:10px;background:var(--navy);color:white;padding:11px 16px;font-weight:700;cursor:pointer}.btn.gold{background:var(--gold);color:#17263b}.btn:disabled{opacity:.55;cursor:wait}.muted{color:var(--muted)}.notice{padding:12px 14px;border-radius:11px;background:#fff8df;border:1px solid #f0df9b;color:#705715;font-size:13px}.ok{background:#eaf8f1;border-color:#bce7d1;color:#126344}.danger{background:#fff0ef;border-color:#f3c3bf;color:#8b2821}
+    .check{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #edf1f6}.check input{margin-top:4px}.rankgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.rankgrid label{font-size:11px;color:var(--muted)}.rankgrid input{margin-top:4px}
+    .result{white-space:pre-wrap;line-height:1.65}.hidden{display:none!important}.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+    @media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}@media(max-width:520px){.grid,.three{grid-template-columns:1fr 1fr}.intro{display:block}.rankgrid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="top"><div class="topline"><div class="brand">THANASIC <small>AI LOCAL SEO • AL KHOR, QATAR</small></div><span class="pill">Owner workspace · Preview</span></div></header>
+<main>
+  <div class="intro"><div><h1>AI SEO Dashboard</h1><p>AC Repair growth workspace for Thanasic Company W.L.L.</p></div><span class="muted" id="savedAt">Local workspace</span></div>
+  <div class="notice" id="connectionNotice">Manual tracking is ready. Live Google Business Profile and Search Console data are not connected yet. Metrics entered here are your own records, not Google-reported data.</div>
+
+  <section class="section grid">
+    <div class="card metric"><label>Google reviews</label><input id="reviews" type="number" min="0" value="14"><small>Current count supplied by owner</small></div>
+    <div class="card metric"><label>Profile views (last 28 days)</label><input id="views" type="number" min="0" placeholder="Enter from GBP"><small>Manual entry</small></div>
+    <div class="card metric"><label>Calls (last 28 days)</label><input id="calls" type="number" min="0" placeholder="Enter from GBP"><small>Manual entry</small></div>
+    <div class="card metric"><label>Website clicks (last 28 days)</label><input id="clicks" type="number" min="0" placeholder="Enter from GBP"><small>Manual entry</small></div>
+  </section>
+
+  <section class="section two">
+    <div class="card">
+      <h2>AC Repair keyword plan</h2>
+      <div><span class="tag">AC repair Al Khor</span><span class="tag">AC service Al Khor</span><span class="tag">AC maintenance Al Khor</span><span class="tag">AC technician Al Khor</span><span class="tag">AC cleaning Al Khor</span><span class="tag">Split AC repair Al Khor</span><span class="tag">تصليح مكيفات الخور</span><span class="tag">صيانة مكيفات الخور</span></div>
+      <p class="muted" style="font-size:12px">Keyword ideas only. Validate demand and actual service coverage before targeting. No search-volume or ranking claims are implied.</p>
+    </div>
+    <div class="card">
+      <h2>Profile facts</h2>
+      <div class="row"><span>Primary category</span><strong>AC repair service</strong></div>
+      <div class="row"><span>Target location</span><strong>Al Khor, Qatar</strong></div>
+      <div class="row"><span>Website</span><a href="https://thanasiccompany.vercel.app/" target="_blank" rel="noopener">Open website ↗</a></div>
+      <div class="row"><span>Google profile</span><a href="https://share.google/7xSwCcFpBlU3650xQ" target="_blank" rel="noopener">Open GBP ↗</a></div>
+    </div>
+  </section>
+
+  <section class="section two">
+    <div class="card">
+      <h2>Local SEO checklist</h2>
+      <div id="checklist">
+        <label class="check"><input type="checkbox" data-task="category"> Confirm primary category matches main service</label>
+        <label class="check"><input type="checkbox" data-task="services"> Add accurate AC repair and maintenance services</label>
+        <label class="check"><input type="checkbox" data-task="hours"> Verify opening hours and phone number</label>
+        <label class="check"><input type="checkbox" data-task="photos"> Upload recent, genuine AC job photos</label>
+        <label class="check"><input type="checkbox" data-task="reviews"> Request honest reviews from completed jobs</label>
+        <label class="check"><input type="checkbox" data-task="replies"> Reply professionally to customer reviews</label>
+        <label class="check"><input type="checkbox" data-task="landing"> Publish a useful AC Repair Al Khor landing page</label>
+        <label class="check"><input type="checkbox" data-task="searchconsole"> Check sitemap and indexing in Search Console</label>
+      </div>
+      <p class="muted" style="font-size:12px">Checklist status is saved in this browser only.</p>
+    </div>
+    <div class="card">
+      <h2>Maps visibility grid</h2>
+      <p class="muted" style="font-size:12px">Manually enter observed map-pack positions for the same keyword at each location. Leave blank if not checked. This is not an automatic rank tracker.</p>
+      <label>Keyword being checked</label><input id="rankKeyword" type="text" value="AC repair Al Khor" style="margin:6px 0 12px">
+      <div class="rankgrid">
+        <label>Al Khor North<input type="number" min="1" max="100" data-rank="north" placeholder="—"></label>
+        <label>Al Khor Centre<input type="number" min="1" max="100" data-rank="centre" placeholder="—"></label>
+        <label>Al Khor South<input type="number" min="1" max="100" data-rank="south" placeholder="—"></label>
+        <label>Al Thakhira<input type="number" min="1" max="100" data-rank="thakhira" placeholder="—"></label>
+        <label>Ras Laffan<input type="number" min="1" max="100" data-rank="raslaffan" placeholder="—"></label>
+        <label>Other area<input type="number" min="1" max="100" data-rank="other" placeholder="—"></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>AI Local SEO audit</h2>
+    <p class="muted">Generate a practical AC Repair SEO action plan using your entered metrics and business details. The API key remains on the server.</p>
+    <div class="three">
+      <div><label for="apiToken">Dashboard access token</label><input id="apiToken" type="password" placeholder="Set DASHBOARD_ACCESS_TOKEN in Vercel"></div>
+      <div><label for="period">Reporting period</label><select id="period"><option>Last 28 days</option><option>Last 7 days</option><option>Last 90 days</option></select></div>
+      <div><label for="focus">SEO focus</label><select id="focus"><option>AC Repair Al Khor</option><option>AC maintenance Al Khor</option><option>AC cleaning Al Khor</option></select></div>
+    </div>
+    <div style="margin-top:12px"><label for="notes">Extra business notes (optional)</label><textarea id="notes" placeholder="Add recent jobs, service capacity, competitor observations or actual search terms. Do not enter customer personal information."></textarea></div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px"><button class="btn gold" id="auditBtn">Generate AI SEO audit</button><button class="btn" id="saveBtn" type="button">Save metrics locally</button><span class="muted" id="status" aria-live="polite"></span></div>
+    <div id="aiResult" class="result hidden" style="margin-top:16px;padding:16px;border-radius:12px;background:#f5f7fb;border:1px solid var(--line)"></div>
+  </section>
+
+  <div class="footer">Thanasic Company W.L.L. · This dashboard does not change your Google Business Profile. Review all AI recommendations before publishing.</div>
+</main>
+<script>
+(function(){
+ const ids=['reviews','views','calls','clicks','rankKeyword','notes','period','focus'];
+ const tasks=[...document.querySelectorAll('[data-task]')];
+ const ranks=[...document.querySelectorAll('[data-rank]')];
+ const $=id=>document.getElementById(id);
+ function collect(){const metrics={};ids.forEach(id=>metrics[id]=$(id).value);metrics.checklist=tasks.filter(x=>x.checked).map(x=>x.dataset.task);metrics.ranks={};ranks.forEach(x=>metrics.ranks[x.dataset.rank]=x.value);return metrics}
+ function save(){localStorage.setItem('thanasicSeoDashboard',JSON.stringify(collect()));$('savedAt').textContent='Saved in this browser';$('status').textContent='Saved locally';}
+ function load(){try{const d=JSON.parse(localStorage.getItem('thanasicSeoDashboard')||'{}');ids.forEach(id=>{if(d[id]!==undefined)$(id).value=d[id]});tasks.forEach(x=>x.checked=(d.checklist||[]).includes(x.dataset.task));ranks.forEach(x=>{if(d.ranks&&d.ranks[x.dataset.rank]!==undefined)x.value=d.ranks[x.dataset.rank]});}catch(e){}}
+ load();$('saveBtn').addEventListener('click',save);
+ tasks.forEach(x=>x.addEventListener('change',save));ids.forEach(id=>$(id).addEventListener('change',()=>{}));ranks.forEach(x=>x.addEventListener('change',()=>{}));
+ const savedToken=sessionStorage.getItem('thanasicDashboardToken');if(savedToken)$('apiToken').value=savedToken;
+ $('apiToken').addEventListener('change',()=>sessionStorage.setItem('thanasicDashboardToken',$('apiToken').value));
+ $('auditBtn').addEventListener('click',async()=>{
+   save();const btn=$('auditBtn'),status=$('status'),out=$('aiResult');const token=$('apiToken').value.trim();
+   if(!token){status.textContent='Enter the dashboard access token from Vercel first.';return}
+   btn.disabled=true;btn.textContent='Generating…';status.textContent='Sending business metrics for analysis…';out.classList.add('hidden');
+   try{
+     const payload={business:'Thanasic Company W.L.L.',service:'AC repair and maintenance',location:'Al Khor, Qatar',website:'https://thanasiccompany.vercel.app/',googleProfile:'https://share.google/7xSwCcFpBlU3650xQ',metrics:collect()};
+     const response=await fetch('/api/seo-audit',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify(payload)});
+     const data=await response.json();if(!response.ok)throw new Error(data.error||'Audit request failed');
+     out.textContent=data.audit||'No audit text returned.';out.classList.remove('hidden');status.textContent='AI audit generated. Verify recommendations before applying.';
+   }catch(err){status.textContent=err.message+' (Check Vercel environment variables and deployment.)'}
+   finally{btn.disabled=false;btn.textContent='Generate AI SEO audit'}
+ });
+})();
+</script>
+</body>
+</html>
