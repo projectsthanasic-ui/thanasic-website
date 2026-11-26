@@ -9,9 +9,10 @@
   <meta property="og:title" content="AC, Electrical &amp; Plumbing Al Khor | Thanasic Company W.L.L." />
   <meta property="og:description" content="AC repair, electrical and plumbing maintenance in Al Khor, Qatar. Basic service from 100 QAR; parts and gas quoted separately. 10-day workmanship warranty." />
   <meta property="og:url" content="https://thanasiccompany.vercel.app/" />
-  <meta property="og:image" content="https://thanasiccompany.vercel.app/images/hero-thanasic.jpg" />
+  <meta property="og:image" content="https://thanasiccompany.vercel.app/images/og-hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
   <link rel="canonical" href="https://thanasiccompany.vercel.app/" />
   <link rel="alternate" hreflang="en" href="https://thanasiccompany.vercel.app/" />
   <link rel="alternate" hreflang="ar" href="https://thanasiccompany.vercel.app/ar/" />
@@ -27,8 +28,8 @@
         "name": "Thanasic Company W.L.L.",
         "alternateName": "Thanasic Co.",
         "url": "https://thanasiccompany.vercel.app/",
-        "logo": "https://thanasiccompany.vercel.app/images/logo.jpg",
-        "image": "https://thanasiccompany.vercel.app/images/hero-thanasic.jpg",
+        "logo": "https://thanasiccompany.vercel.app/images/logo.png",
+        "image": "https://thanasiccompany.vercel.app/images/og-hero.jpg",
         "telephone": "+97430363999",
         "priceRange": "100 QAR+",
         "knowsLanguage": ["en", "ar"],
@@ -127,43 +128,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'Cairo', 'system-ui', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'Cairo', 'system-ui', 'sans-serif'],
-            arabic: ['Cairo', 'Inter', 'sans-serif'],
-          },
-          colors: {
-            navy: {
-              950: '#061529',
-              900: '#0A1F3C',
-              800: '#13315C',
-              700: '#1E467A',
-            },
-            sand: {
-              50: '#FFFFFF',
-              100: '#F6F8FB',
-              200: '#E6ECF5',
-            },
-            gold: {
-              50: '#FCF9EE',
-              100: '#F7EFC8',
-              300: '#E6C86E',
-              400: '#D4AF37',
-              500: '#C59B27',
-              600: '#856404',
-              700: '#6E5203',
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <script src="js/analytics.js" defer></script>
+  <script src="js/lucide.min.js"></script>
   <style>
     body {
       font-family: 'Inter', 'Cairo', system-ui, sans-serif;
@@ -218,7 +185,7 @@
       <div class="flex items-center justify-between h-16">
         <!-- Brand -->
         <a href="#top" class="flex items-center gap-2.5 group">
-          <img src="images/logo.jpg" width="40" height="40" alt="Thanasic Company Logo" class="w-10 h-10 rounded-xl object-cover border border-gold-400/50 shadow-sm shrink-0" />
+          <img src="images/logo.png" width="40" height="40" alt="Thanasic Company Logo" class="w-10 h-10 rounded-xl object-cover border border-gold-400/50 shadow-sm shrink-0" />
           <div>
             <span class="block font-extrabold text-navy-900 tracking-tight text-base leading-none">THANASIC CO.</span>
             <span class="block text-[11px] font-medium text-slate-500 mt-0.5" data-i18n="brandSub">AC • Electrical • Plumbing | Al Khor</span>
@@ -339,7 +306,7 @@
           <!-- Right Visual -->
           <div class="lg:col-span-6">
             <div class="relative rounded-2xl overflow-hidden border border-gold-400/40 shadow-2xl bg-navy-800 ring-1 ring-white/10">
-              <img src="images/hero-thanasic.jpg" width="1200" height="1200" alt="Thanasic Company team lead at the Al Khor reception desk" class="w-full h-auto object-cover object-top aspect-[16/10]" />
+              <img src="images/hero-thanasic.webp" width="1200" height="1200" alt="Thanasic Company team lead at the Al Khor reception desk" class="w-full h-auto object-cover object-top aspect-[16/10]" />
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/95 via-navy-950/70 to-transparent p-5">
                 <div class="grid grid-cols-3 gap-3 text-center">
                   <div class="rounded-xl bg-white/10 backdrop-blur-sm px-2.5 py-2 border border-gold-400/20">
@@ -506,19 +473,19 @@
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
-            <img src="images/team-conduit.jpg" alt="Electrical conduit &amp; wiring team in PPE" class="w-full h-48 object-cover" />
+            <img src="images/team-conduit.webp" alt="Electrical conduit &amp; wiring team in PPE" class="w-full h-48 object-cover" />
             <p class="px-3 py-2 text-xs font-medium text-slate-700">Electrical conduit and wiring work</p>
           </div>
           <div class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
-            <img src="images/team-db.jpg" alt="Electrical distribution board servicing" class="w-full h-48 object-cover" />
+            <img src="images/team-db.webp" alt="Electrical distribution board servicing" class="w-full h-48 object-cover" />
             <p class="px-3 py-2 text-xs font-medium text-slate-700">Electrical distribution board inspection and servicing</p>
           </div>
           <div class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
-            <img src="images/team-coil.jpg" alt="Commercial AC coil chemical cleaning" class="w-full h-48 object-cover" />
+            <img src="images/team-coil.webp" alt="Commercial AC coil chemical cleaning" class="w-full h-48 object-cover" />
             <p class="px-3 py-2 text-xs font-medium text-slate-700">AC coil cleaning and maintenance</p>
           </div>
           <div class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
-            <img src="images/team-site.jpg" alt="Compound &amp; site maintenance in Qatar" class="w-full h-48 object-cover" />
+            <img src="images/team-site.webp" alt="Compound &amp; site maintenance in Qatar" class="w-full h-48 object-cover" />
             <p class="px-3 py-2 text-xs font-medium text-slate-700">On-site property and facility maintenance</p>
           </div>
         </div>
@@ -682,7 +649,7 @@
   <footer class="bg-navy-950 border-t border-gold-400/20 text-slate-400 py-10 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <img src="images/logo.jpg" width="36" height="36" alt="Thanasic Company Logo" class="w-9 h-9 rounded-lg object-cover border border-gold-400/40 shrink-0" />
+        <img src="images/logo.png" width="36" height="36" alt="Thanasic Company Logo" class="w-9 h-9 rounded-lg object-cover border border-gold-400/40 shrink-0" />
         <div>
           <span class="font-bold text-white">Thanasic Company W.L.L.</span> • Barqat Al Saei St, Al Khor, Qatar •
           <span>© 2026 All Rights Reserved.</span>
@@ -920,7 +887,7 @@
         titleAr: 'إصلاح وتركيب المكيفات وتعبئة الغاز',
         descEn: 'Split, window, ducted, and VRF diagnostics, leak detection, refrigerant top-up, and new unit installation.',
         descAr: 'تشخيص أعطال مكيفات السبليت والشباك والدكت وVRF، فحص تسرب الغاز، وتعبئة الفريون والتركيب.',
-        image: 'images/ac-repair.jpg',
+        image: 'images/ac-repair.webp',
         bookingValue: 'AC Repair & Maintenance',
         detailUrl: '/ac-repair-installation-al-khor.html',
         priceTagEn: 'From 100 QAR (parts &amp; gas extra) • 10-Day Workmanship Warranty',
@@ -948,7 +915,7 @@
         titleAr: 'صيانة الكهرباء وإصلاح الأعطال',
         descEn: 'Standalone electrical support in Al Khor for tripping breakers, DB panels, wiring faults, sockets, and lighting.',
         descAr: 'خدمات كهرباء متكاملة في الخور لحل فصل القواطع وأعطال اللوحات والتمديدات والأفياش والإنارة.',
-        image: 'images/electrical-db.jpg',
+        image: 'images/electrical-db.webp',
         bookingValue: 'Electrical Maintenance & Repair',
         detailUrl: '/electrical-services-al-khor.html',
         priceTagEn: 'From 100 QAR (basic inspection; parts extra) • 10-Day Workmanship Warranty',
@@ -976,7 +943,7 @@
         titleAr: 'إصلاح السباكة والمضخات وتسريبات المياه',
         descEn: 'Rapid plumbing repairs for water leaks, blocked drains, booster pumps, water heaters, and rooftop tank lines.',
         descAr: 'إصلاح تسريبات المياه وانسداد المجاري ومضخات الدفع وسخانات المياه وتوصيلات الخزانات.',
-        image: 'images/plumbing-repair.jpg',
+        image: 'images/plumbing-repair.webp',
         bookingValue: 'Plumbing Repair & Maintenance',
         detailUrl: '/plumbing-services-al-khor.html',
         priceTagEn: 'From 100 QAR (basic inspection; parts extra) • 10-Day Workmanship Warranty',
@@ -1004,7 +971,7 @@
         titleAr: 'تنظيف المكيفات والتنظيف العميق',
         descEn: 'Anti-bacterial AC filter, indoor/outdoor coil, blower & drain cleaning alongside villa deep-cleaning enquiries.',
         descAr: 'تنظيف الفلاتر والملفات الداخلية والخارجية ومجاري التصريف للمكيفات بالإضافة للتنظيف العميق للفلل.',
-        image: 'images/ac-deep-clean.jpg',
+        image: 'images/ac-deep-clean.webp',
         icon: 'sparkles',
         bookingValue: 'AC & Property Deep Cleaning',
         priceTagEn: 'From 100 QAR • Scope confirmed before booking',
@@ -1032,7 +999,7 @@
         titleAr: 'عقود الصيانة السنوية والمنشآت',
         descEn: 'Scheduled preventive visits and agreed breakdown support for AC, electrical, and plumbing across villas, compounds, shops, and offices. We define the asset list, visit frequency, response terms, and reporting arrangements in the quotation.',
         descAr: 'زيارات وقائية مجدولة ودعم أعطال يشمل التكييف والكهرباء والسباكة للفلل والمجمعات والمكاتب.',
-        image: 'images/amc-facility.jpg',
+        image: 'images/amc-facility.webp',
         icon: 'shield-check',
         bookingValue: 'AMC / Commercial Maintenance',
         priceTagEn: 'Custom AMC Plans • Preventive Visits',
